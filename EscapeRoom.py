@@ -79,21 +79,21 @@ for key in printMenu:
 
 
 check = input("Let's check: ").upper()
-if check == "Q":
+while check == "Q":
 	print(coffee())
 	for key in coffee_:
 		print(key + ":\t" + coffee_[key]["text"])
 	examine = input("Examine: ")
 	if examine == "1":
 		print(magazines())
-		print(key + ":\t" + coffee_[key]["text"])
-	if examine == "2":
+		
+	elif examine == "2":
 		print(coffeeMug())
-		print(key + ":\t" + coffee_[key]["text"])
-	if examine == "3":
+		
+	elif examine == "3":
 		print(coaster())
-		print(key + ":\t" + coffee_[key]["text"])
-	if examine == "9":
+		
+	elif examine == "9":
 		print(main_menu())
 		for key in printMenu:
 			print(key + ":\t" + printMenu[key]["text"])
