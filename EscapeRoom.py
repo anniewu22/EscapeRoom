@@ -87,10 +87,7 @@ examine_dict = {
 	}
 }
 	
-main_ = {"Q": "The coffee table", 
-"W": "The pitcher plant", 
-"E": "The computer desk"
-}
+main_ = {"Q": "The coffee table", "W": "The pitcher plant", "E": "The computer desk"}
 
 def select():
 	select = input("let's search: ").upper()
