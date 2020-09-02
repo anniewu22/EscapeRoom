@@ -1,0 +1,164 @@
+# Defining places and objects 
+
+examine_dict = {
+"coffee table": {
+	"text": "You check the coffee table. There are some magazines, a coffee mug, and a coaster.",
+	"options": {
+		"1": "magazines", 
+		"2": "coffee mug",
+		"3": "coaster",
+		"4": "return"}	
+	},
+"magazines": {
+	"text": "These editions are from last week",
+	"options": {
+		"1": "collect",
+		"2": "return"}
+	},
+"coffee mug": {
+	"text": "There's still some coffee left",
+	"options": {
+		"1": "collect fingerprint",
+		"2": "return"}
+	},
+"coaster": {
+	"text": "It's just a coaster",
+	"options": {
+		"1": "return"}
+	},
+"plant": {
+	"text": "This plant has seen better days...looks like it's been neglected for weeks. Look, it's leaves are all curled and wrinkled up. Not that water will save it now.",
+	"options": {
+		"1": "dirt",
+		"2": "leaves",
+		"3": "return"}
+	},
+"dirt": {
+	"text": "The dirt's all dried up. You feel no resistance as you push your fingers through, until you hit something solid.",
+	"options": {
+		"1": "collect object",
+		"2": "return"}
+	},
+"leaves": {
+	"text": "You start to unfold some of the leaves and notice some dark brown spots on some of the leaves.",
+	"options": {
+		"1": "Scratch at the leaves",
+		"2": "return" }
+	},
+"desk": {
+	"text": "What a mess..where should I start looking?",
+	"options": {
+		"1": "files",
+		"2": "drawers",
+		"3": "coffee mug",
+		"4": "return"}
+	},
+"files": {
+	"text": "--insert something interesting--",
+	"options": {
+		"1": "read more",
+		"2": "return"}
+	},
+"drawers": {
+	"text": "It's locked...",
+	"options": {
+		"1": "use key",
+		"2": "return"}
+	},
+"coffee mug": {
+	"text": "There's still some coffee left",
+	"options": {
+		"1": "collect fingerprint",
+		"2": "return"}
+	}
+}
+
+
+# Menu Options : Examine, Collect, Use, Return to previous, Return to main
+
+# Inventory : Check inventory, Items collected need to end up in inventory
+# def Collect option --> Inventory
+
+
+# First in-game text
+def displayIntro():
+	print("You're awake! I just came to about 15 minutes ago. My name is Annie.\n")
+	print("I tried that door but it's locked, not to mention, there's three separate locks holding it shut.\n")
+	print("You must be as scared as I am, but we'll figure this out together.\n")
+	print("Let's start by looking around and see where we might be.")
+	print()
+
+
+
+def coffeetable():
+	print(examine_dict["coffee table"]["text"])
+	print()
+	print(examine_dict["coffee table"]["options"])
+	check = ""
+	while check != "1" and check != "2" and check != "3" and check != "4":
+		check = input("Check: ")
+	return check
+	if check == "1":
+		print(examine_dict["magazines"]["text"])
+		print(examine_dict["magazines"]["options"])
+		action = ""
+		while action != "1" and action != "2":
+			action = input("What do you want to do? ")
+		return action
+		if action == "1":
+			print("Added magazines into inventory")
+			print(examine_dict["coffee table"]["options"])
+			check = ""
+			while check != "1" and check != "2" and check != "3" and check != "4":
+				check = input("Check: ")
+			return check
+		else:
+			print(examine_dict["coffee table"]["options"])
+			check = ""
+			while check != "1" and check != "2" and check != "3" and check != "4":
+				check = input("Check: ")
+			return check
+	elif check == "2":
+		print(examine_dict["coffee mug"]["text"])
+		print(examine_dict["coffee mug"]["options"])
+		action = ""
+		while action != "1" and action != "2":
+			action = input("What do you want to do? ")
+		return action
+		if action == "1":
+			print("You can collect some fingerprints if you have tape")
+			print(examine_dict["coffee table"]["options"])
+			check = ""
+			while check != "1" and check != "2" and check != "3" and check != "4":
+				check = input("Check: ")
+			return check
+		else:
+			print(examine_dict["coffee table"]["options"])
+			check = ""
+			while check != "1" and check != "2" and check != "3" and check != "4":
+				check = input("Check: ")
+			return check
+	elif check == "3":
+		print(examine_dict["coaster"]["text"])
+		print(examine_dict["coffee mug"]["text"])
+		print(examine_dict["coffee mug"]["options"])
+		action = ""
+		while action != "1" and action != "2":
+			action = input("What do you want to do? ")
+	elif check == "4":
+		select_main_menu()
+
+main_ = {"q": "The coffee table", "w": "The pitcher plant", "e": "The computer desk"}
+
+def select_main_menu():
+	print(main_)
+	print()
+	select = ""
+	while select != "q" and select != "w" and select != "e":
+		select = input("Please make a selection (q / w / e): ")
+	return select
+	if select == "q":
+		coffeetable()
+	
+
+
