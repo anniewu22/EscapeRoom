@@ -97,47 +97,40 @@ def coffeetable():
 	check = ""
 	while check != "1" and check != "2" and check != "3" and check != "4":
 		check = input("Check: ")
-	return check
 	if check == "1":
 		print(examine_dict["magazines"]["text"])
 		print(examine_dict["magazines"]["options"])
 		action = ""
 		while action != "1" and action != "2":
 			action = input("What do you want to do? ")
-		return action
 		if action == "1":
 			print("Added magazines into inventory")
 			print(examine_dict["coffee table"]["options"])
 			check = ""
 			while check != "1" and check != "2" and check != "3" and check != "4":
 				check = input("Check: ")
-			return check
 		else:
 			print(examine_dict["coffee table"]["options"])
 			check = ""
 			while check != "1" and check != "2" and check != "3" and check != "4":
 				check = input("Check: ")
-			return check
 	elif check == "2":
 		print(examine_dict["coffee mug"]["text"])
 		print(examine_dict["coffee mug"]["options"])
 		action = ""
 		while action != "1" and action != "2":
 			action = input("What do you want to do? ")
-		return action
 		if action == "1":
 			print("You can collect some fingerprints if you have tape")
 			print(examine_dict["coffee table"]["options"])
 			check = ""
 			while check != "1" and check != "2" and check != "3" and check != "4":
 				check = input("Check: ")
-			return check
 		else:
 			print(examine_dict["coffee table"]["options"])
 			check = ""
 			while check != "1" and check != "2" and check != "3" and check != "4":
 				check = input("Check: ")
-			return check
 	elif check == "3":
 		print(examine_dict["coaster"]["text"])
 		print(examine_dict["coffee mug"]["text"])
@@ -156,9 +149,11 @@ def select_main_menu():
 	select = ""
 	while select != "q" and select != "w" and select != "e":
 		select = input("Please make a selection (q / w / e): ")
-	return select
 	if select == "q":
 		coffeetable()
 	
+	
+displayIntro()
+select_main_menu()
 
 
